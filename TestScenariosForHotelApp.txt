@@ -1,0 +1,39 @@
+Scanarios for hotel app:(Adactinhotelapp.com)
+
+register user:	 	positive -Reistration successfully 			negative -invalid details,user already exist
+email verification:	positive -Verified email successfully 			negative -your email is not verified
+login:			positive -login successfully 				negative -incorrect login details, incorrect username, incorrect password
+search options:		positive -successfully fetched the hotel		negative -please search only hotels, no such hotel exists, no hotels are available 
+hotel selection:	positive -hotel selected				negative -please select hotel from above list
+booking page:		positive -booked hotel successfully			negative -please enter valid details, please enter valid credit card no,your credit card is expired,please select card type, cvv number is incorrect
+confirmation:		positive -your order is confirmed			negative - not confirmed the book order
+cancellation:		positive -cancelled the order successfully		negative -you have not booked any hotel,please confirm the order first,you have already cancelled the order
+log out:		positive -logged out successfully			negative -problem while logging out
+ 
+
+
+boundary value analysis:
+rs. 0 to rs. 50000
+
+-1,0,1	49999,50000,50001
+
+
+
+equivalent partitioning:
+
+rs. 60001 to rs. 150000
+45000,105000,170000
+
+60000	150000
+
+
+definition table:
+
+Inputs:
+Name		T	T	F	F	T	T
+Email		T	F	T	F	T	T
+Mobile No.	T	T	T	F	F	T
+gender		T	T	T	F	T	F
+
+output:
+submit		T	F	F	F	F	F
