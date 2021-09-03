@@ -1,0 +1,54 @@
+Scanarios for hotel app:(Adactinhotelapp.com)
+
+register user:	 	positive -Reistration successfully 			negative -invalid details,user already exist
+email verification:	positive -Verified email successfully 			negative -your email is not verified
+login:			positive -login successfully 				negative -incorrect login details, incorrect username, incorrect password
+Positive test cases: Positive test cases ensure that users can perform appropriate actions when using valid data.
+
+Negative test cases: Negative test cases are performed to try to break or crack the software by performing invalid (or unacceptable) actions, or by using invalid data.
+
+Example: AdactinHotelApp.com
+
+search options:		positive -successfully fetched the hotel		negative -please search only hotels, no such hotel exists, no hotels are available 
+hotel selection:	positive -hotel selected				negative -please select hotel from above list
+booking page:		positive -booked hotel successfully			negative -please enter valid details, please enter valid credit card no,your credit card is expired,please select card type, cvv number is incorrect
+confirmation:		positive -your order is confirmed			negative - not confirmed the book order
+cancellation:		positive -cancelled the order successfully		negative -you have not booked any hotel,please confirm the order first,you have already cancelled the order
+log out:		positive -logged out successfully			negative -problem while logging out
+ 
+
+Testing techniques used for positive test cases and neative test cases:
+1. Boundary Value Analysis (Range Checking): Process of testing between boundaries between partitions of input values. 
+
+rs. 0 to rs. 50000
+
+   0   |       50000
+       |
+-1,0,1 | 49999,50000,50001
+
+
+
+2. Equivalence Partitioning: In this technique, input data units are divided into equivalent partitions that can be used to derive test cases.
+
+rs. 60001 to rs. 150000
+
+Prtition 1|  Partition 2 | Partition 3
+0-60000   | 50000-150000 | 150000-200000
+Invalid   |    Valid     | Invalid
+
+The hypothesis behind this technique is, if one value in partition passes then all other values within same partition also pass and vice versa.
+
+#Above two techniques are mainly used to test individual input conditions. However, decision table testing allows us to examine combinations of conditions.
+
+Decision table testing: It is a table showing combinations of inputs and their associated outputs, which can be used to design test cases.
+
+Inputs:
+
+Name		T	T	F	F	T	T
+Email		T	F	T	F	T	T
+Mobile No.	T	T	T	F	F	T
+gender		T	T	T	F	T	F
+
+outputs:
+
+submit		T	F	F	F	F	F
